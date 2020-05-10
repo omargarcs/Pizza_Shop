@@ -6,7 +6,6 @@ public class Parser {
     public void readLine(String line) {
 
         String[] parseLine = line.split(" ");
-
     }
 
     public boolean validateReadLine(String[] readLine) {
@@ -15,8 +14,8 @@ public class Parser {
             return false;
         }
 
-        String ingredient = readLine[0];
-        int timeCook = Integer.parseInt(readLine[1]);
+        //Only validate the Int value
+        Integer.parseInt(readLine[1]);
 
         return true;
 
