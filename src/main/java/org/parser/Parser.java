@@ -4,7 +4,6 @@ import org.model.Instruction;
 
 public class Parser {
 
-
     public Instruction readLine(String line) {
 
         String[] parseLine = line.split(" ");
