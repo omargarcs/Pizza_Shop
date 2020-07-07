@@ -2,7 +2,7 @@ package org.kitchen;
 
 import org.model.Instruction;
 
-public class Cook {
+public class Kitchen {
 
     public String cookingInstruction(Instruction instruction) {
 
