@@ -8,7 +8,7 @@ public class Parser {
 
         String[] parseLine = line.split(" ");
 
-        if (!validateReadLine(parseLine)) {
+        if (!isValidateReadLine(parseLine)) {
             return null;
         }
 
@@ -19,16 +19,19 @@ public class Parser {
         return instruction;
     }
 
-    public boolean validateReadLine(String[] readLine) {
+    public boolean isValidateReadLine(String[] readLine) {
 
-        if (readLine.length <= 2) {
-            return true;
+        if (readLine.length > 2) {
+            return false;
         }
 
-        //Only validate the Int value
-        Integer.parseInt(readLine[1]);
+        try{
+            Integer.parseInt(readLine[1]); // TIME OF COOKING
+        }catch (Exception e){
+            return false;
+        }
 
-        return false;
+        return true;
 
     }
 }

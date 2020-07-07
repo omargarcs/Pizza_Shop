@@ -43,6 +43,7 @@ public class Cook {
 
     private String validateCookTime(int cookTime) {
 
+        //POSIBLE REFACTOR
         if (cookTime <= 14) {
             return "Pizza Cruda";
         } else if (cookTime >= 31) {

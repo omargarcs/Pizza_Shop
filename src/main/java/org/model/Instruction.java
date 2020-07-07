@@ -5,6 +5,15 @@ public class Instruction {
     private String ingredient;
     private int cookTime;
 
+    public Instruction(){
+
+    }
+
+    public Instruction (String ingredient, int cookTime){
+        this.ingredient = ingredient;
+        this.cookTime = cookTime;
+    }
+
     public String getIngredient() {
         return ingredient;
     }
