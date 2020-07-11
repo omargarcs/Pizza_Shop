@@ -13,15 +13,15 @@ enum Flavor{
 
 public class Kitchen {
 
+    Flavor flavor = null;
+
     public String cookingInstruction(Instruction instruction) {
 
         String ingredient = instruction.getIngredient();
         int cookTime = instruction.getCookTime();
-        Flavor flavor = null;
 
-        if (validateCookTime(cookTime) != null) {
-
-            return validateCookTime(cookTime);
+        if (isvalidCookTime(cookTime)) {
+            return flavor.toString();
         }
 
         switch (ingredient) {
@@ -50,14 +50,16 @@ public class Kitchen {
         return flavor.toString();
     }
 
-    private String validateCookTime(int cookTime) {
+    private Boolean isvalidCookTime(int cookTime) {
 
         //POSIBLE REFACTOR
         if (cookTime <= 14) {
-            return "Pizza Cruda";
+            flavor = Flavor.PIZZA_CRUDA;
+            return true;
         } else if (cookTime >= 31) {
-            return "Pizza Quemada";
+            flavor = Flavor.PIZZA_QUEMADA;
+            return true;
         }
-        return null;
+        return false;
     }
 }
