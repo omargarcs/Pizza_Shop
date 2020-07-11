@@ -16,12 +16,12 @@ public class KitchenTest {
         Instruction cruda = new Instruction("ATUN",14);
         Instruction noPizza = new Instruction("PASTOR",25);
 
-        Assert.assertEquals("PIZZA MEXICANA", kitchen.cookingInstruction(mexicana));
-        Assert.assertEquals("PIZZA HAWUAIANA", kitchen.cookingInstruction(hawuaiana));
-        Assert.assertEquals("PIZZA MARISCOS", kitchen.cookingInstruction(mariscos));
-        Assert.assertEquals("Pizza Quemada", kitchen.cookingInstruction(quemada));
-        Assert.assertEquals("Pizza Cruda", kitchen.cookingInstruction(cruda));
-        Assert.assertEquals("ESO NO ES PIZZA", kitchen.cookingInstruction(noPizza));
+        Assert.assertEquals("PIZZA_MEXICANA", kitchen.cookingInstruction(mexicana));
+        Assert.assertEquals("PIZZA_HAWUAIANA", kitchen.cookingInstruction(hawuaiana));
+        Assert.assertEquals("PIZZA_MARISCOS", kitchen.cookingInstruction(mariscos));
+        Assert.assertEquals("PIZZA_QUEMADA", kitchen.cookingInstruction(quemada));
+        Assert.assertEquals("PIZZA_CRUDA", kitchen.cookingInstruction(cruda));
+        Assert.assertEquals("ESO_NO_ES_PIZZA", kitchen.cookingInstruction(noPizza));
 
         /* HOMEWORK
         - Separar Pruebas
