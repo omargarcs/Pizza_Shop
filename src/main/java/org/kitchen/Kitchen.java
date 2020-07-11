@@ -2,13 +2,22 @@ package org.kitchen;
 
 import org.model.Instruction;
 
+enum Flavor{
+    PIZZA_MEXICANA,
+    PIZZA_HAWUAIANA,
+    PIZZA_MARISCOS,
+    ESO_NO_ES_PIZZA,
+    PIZZA_CRUDA,
+    PIZZA_QUEMADA
+}
+
 public class Kitchen {
 
     public String cookingInstruction(Instruction instruction) {
 
         String ingredient = instruction.getIngredient();
         int cookTime = instruction.getCookTime();
-        String flavor = "";
+        Flavor flavor = null;
 
         if (validateCookTime(cookTime) != null) {
 
@@ -18,27 +27,27 @@ public class Kitchen {
         switch (ingredient) {
             case "ELOTE":
                 if (cookTime == 15) {
-                    flavor  =  "PIZZA MEXICANA";
+                    flavor = Flavor.PIZZA_MEXICANA;
                 }
                 break;
 
             case "PINA":
                 if (cookTime == 20) {
-                    flavor  = "PIZZA HAWUAIANA";
+                    flavor  = Flavor.PIZZA_HAWUAIANA;
                 }
                 break;
 
             case "ATUN":
                 if (cookTime == 30) {
-                    flavor  = "PIZZA MARISCOS";
+                    flavor  = Flavor.PIZZA_MARISCOS;
                 }
                 break;
 
             default:
-                flavor  = "ESO NO ES PIZZA";
+                flavor = Flavor.ESO_NO_ES_PIZZA;
         }
 
-        return flavor;
+        return flavor.toString();
     }
 
     private String validateCookTime(int cookTime) {
