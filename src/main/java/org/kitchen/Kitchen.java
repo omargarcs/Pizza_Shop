@@ -51,7 +51,6 @@ public class Kitchen {
     }
 
     private Boolean isvalidCookTime(int cookTime) {
-
         //POSIBLE REFACTOR
         if (cookTime <= 14) {
             flavor = Flavor.PIZZA_CRUDA;
