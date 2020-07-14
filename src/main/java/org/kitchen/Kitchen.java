@@ -1,21 +1,8 @@
 package org.kitchen;
 
+import org.model.Flavor;
+import org.model.Ingredient;
 import org.model.Instruction;
-
-enum Flavor{
-    PIZZA_MEXICANA,
-    PIZZA_HAWUAIANA,
-    PIZZA_MARISCOS,
-    ESO_NO_ES_PIZZA,
-    PIZZA_CRUDA,
-    PIZZA_QUEMADA
-}
-
-enum Ingredient {
-    ELOTE,
-    PINA,
-    ATUN
-}
 
 public class Kitchen {
 
