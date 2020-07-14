@@ -39,9 +39,4 @@ public class KitchenTest {
         Assert.assertEquals("PIZZA_CRUDA", kitchen.cookingInstruction(cruda));
 
     }
-
-    /* HOMEWORK
-        - Separar Pruebas
-        - Cambiar if -> ValidateCook
-        - Investigar y aplicar Enums */
 }
