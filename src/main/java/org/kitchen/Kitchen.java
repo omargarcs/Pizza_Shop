@@ -13,7 +13,7 @@ public class Kitchen {
 
         try{
             ingredients = Ingredient.valueOf(instruction.getIngredient());
-        }catch (Exception e){
+        }catch (IllegalArgumentException e){
             return Flavor.ESO_NO_ES_PIZZA.toString();
         }
         int cookTime = instruction.getCookTime();
