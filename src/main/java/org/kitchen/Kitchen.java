@@ -11,33 +11,44 @@ enum Flavor{
     PIZZA_QUEMADA
 }
 
+enum Ingredient {
+    ELOTE,
+    PINA,
+    ATUN
+}
+
 public class Kitchen {
 
-    Flavor flavor = null;
+    Flavor flavor;
+    Ingredient ingredients;
 
     public String cookingInstruction(Instruction instruction) {
 
-        String ingredient = instruction.getIngredient();
+        try{
+            ingredients = Ingredient.valueOf(instruction.getIngredient());
+        }catch (Exception e){
+            return Flavor.ESO_NO_ES_PIZZA.toString();
+        }
         int cookTime = instruction.getCookTime();
 
         if (isvalidCookTime(cookTime)) {
             return flavor.toString();
         }
 
-        switch (ingredient) {
-            case "ELOTE":
+        switch (ingredients) {
+            case ELOTE:
                 if (cookTime == 15) {
                     flavor = Flavor.PIZZA_MEXICANA;
                 }
                 break;
 
-            case "PINA":
+            case PINA:
                 if (cookTime == 20) {
                     flavor  = Flavor.PIZZA_HAWUAIANA;
                 }
                 break;
 
-            case "ATUN":
+            case ATUN:
                 if (cookTime == 30) {
                     flavor  = Flavor.PIZZA_MARISCOS;
                 }
