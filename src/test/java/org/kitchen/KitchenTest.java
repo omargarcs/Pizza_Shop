@@ -25,6 +25,8 @@ public class KitchenTest {
 
     @Test
     public void cookingInstructionThisIsNoPizzaTest(){
+        Flavor flavor;
+        Ingredient ingredient;
         Kitchen kitchen = new Kitchen();
         Instruction noPizza = new Instruction("PASTOR",25);
         Assert.assertEquals(Flavor.ESO_NO_ES_PIZZA.toString(), kitchen.cookingInstruction(noPizza));
@@ -32,6 +34,8 @@ public class KitchenTest {
 
     @Test
     public void cookingInstructionBurnPizzaTest(){
+        Flavor flavor;
+        Ingredient ingredient;
         Kitchen kitchen = new Kitchen();
         Instruction quemada = new Instruction(Ingredient.ATUN.toString(),31);
         Assert.assertEquals(Flavor.PIZZA_QUEMADA.toString(), kitchen.cookingInstruction(quemada));
@@ -39,6 +43,8 @@ public class KitchenTest {
 
     @Test
     public  void cookingInstructionRawPizza(){
+        Flavor flavor;
+        Ingredient ingredient;
         Kitchen kitchen = new Kitchen();
         Instruction cruda = new Instruction(Ingredient.ATUN.toString(),14);
         Assert.assertEquals(Flavor.PIZZA_CRUDA.toString(), kitchen.cookingInstruction(cruda));
