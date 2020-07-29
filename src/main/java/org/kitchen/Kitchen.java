@@ -9,17 +9,14 @@ public class Kitchen {
     Flavor flavor;
     Ingredient ingredients;
 
-    public String cookingInstruction(Instruction instruction) {
+    public Flavor cookingInstruction(Instruction instruction) {
 
-        try{
-            ingredients = Ingredient.valueOf(instruction.getIngredient());
-        }catch (IllegalArgumentException e){
-            return Flavor.ESO_NO_ES_PIZZA.toString();
-        }
+        ingredients = instruction.getIngredient();
+
         int cookTime = instruction.getCookTime();
 
         if (isvalidCookTime(cookTime)) {
-            return flavor.toString();
+            return flavor;
         }
 
         switch (ingredients) {
@@ -45,7 +42,7 @@ public class Kitchen {
                 flavor = Flavor.ESO_NO_ES_PIZZA;
         }
 
-        return flavor.toString();
+        return flavor;
     }
 
     private Boolean isvalidCookTime(int cookTime) {

@@ -2,23 +2,23 @@ package org.model;
 
 public class Instruction {
 
-    private String ingredient;
+    private Ingredient ingredient;
     private int cookTime;
 
     public Instruction(){
 
     }
 
-    public Instruction (String ingredient, int cookTime){
+    public Instruction (Ingredient ingredient, int cookTime){
         this.ingredient = ingredient;
         this.cookTime = cookTime;
     }
 
-    public String getIngredient() {
+    public Ingredient getIngredient() {
         return ingredient;
     }
 
-    public void setIngredient(String ingredient) {
+    public void setIngredient(Ingredient ingredient) {
         this.ingredient = ingredient;
     }
 
