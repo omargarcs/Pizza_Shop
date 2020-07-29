@@ -1,5 +1,6 @@
 package org.parser;
 
+import org.model.Ingredient;
 import org.model.Instruction;
 
 public class Parser {
@@ -13,7 +14,7 @@ public class Parser {
         }
 
         Instruction instruction = new Instruction();
-        instruction.setIngredient(parseLine[0]);
+        instruction.setIngredient(Ingredient.valueOf(parseLine[0]));
         instruction.setCookTime(Integer.parseInt(parseLine[1]));
 
         return instruction;

@@ -1,43 +1,38 @@
 package org.kitchen;
 
+import org.model.Flavor;
+import org.model.Ingredient;
 import org.model.Instruction;
-
-enum Flavor{
-    PIZZA_MEXICANA,
-    PIZZA_HAWUAIANA,
-    PIZZA_MARISCOS,
-    ESO_NO_ES_PIZZA,
-    PIZZA_CRUDA,
-    PIZZA_QUEMADA
-}
 
 public class Kitchen {
 
-    Flavor flavor = null;
+    Flavor flavor;
+    Ingredient ingredients;
 
-    public String cookingInstruction(Instruction instruction) {
+    public Flavor cookingInstruction(Instruction instruction) {
 
-        String ingredient = instruction.getIngredient();
+        ingredients = instruction.getIngredient();
+
         int cookTime = instruction.getCookTime();
 
         if (isvalidCookTime(cookTime)) {
-            return flavor.toString();
+            return flavor;
         }
 
-        switch (ingredient) {
-            case "ELOTE":
+        switch (ingredients) {
+            case ELOTE:
                 if (cookTime == 15) {
                     flavor = Flavor.PIZZA_MEXICANA;
                 }
                 break;
 
-            case "PINA":
+            case PINA:
                 if (cookTime == 20) {
                     flavor  = Flavor.PIZZA_HAWUAIANA;
                 }
                 break;
 
-            case "ATUN":
+            case ATUN:
                 if (cookTime == 30) {
                     flavor  = Flavor.PIZZA_MARISCOS;
                 }
@@ -47,7 +42,7 @@ public class Kitchen {
                 flavor = Flavor.ESO_NO_ES_PIZZA;
         }
 
-        return flavor.toString();
+        return flavor;
     }
 
     private Boolean isvalidCookTime(int cookTime) {

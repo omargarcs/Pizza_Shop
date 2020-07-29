@@ -6,12 +6,10 @@ import org.model.Instruction;
 
 public class ParserTest {
 
-    @Test
+    @Test (expected = IllegalArgumentException.class)
     public void parseLineTest(){
         Parser parser = new Parser();
         Instruction instruction = parser.readLine("PEPERONI 15");
-        Assert.assertEquals("PEPERONI", instruction.getIngredient());
-        Assert.assertEquals(15,instruction.getCookTime());
     }
 
     @Test
